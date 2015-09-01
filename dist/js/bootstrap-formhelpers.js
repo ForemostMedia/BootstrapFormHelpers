@@ -1,6 +1,6 @@
 /**
 * bootstrap-formhelpers.js v2.3.0 by @vincentlamanna
-* Copyright 2013 Vincent Lamanna
+* Copyright 2015 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 if (!jQuery) { throw new Error("Bootstrap Form Helpers requires jQuery"); }
@@ -7814,7 +7814,7 @@ var BFHLanguagesList = {
   'mk': 'македонски јазик',
   'mn': 'монгол',
   'ce': 'нохчийн мотт',
-  'ru': 'русский язык',
+  'ru': 'Русский язык',
   'sr': 'српски језик',
   'tt': 'татар теле',
   'tg': 'тоҷикӣ',
@@ -17416,7 +17416,8 @@ var BFHTimezonesList = {
           iconRight,
           iconAddon,
           modeAddon,
-          modeMax;
+          modeMax,
+          modeMin;
 
       iconLeft = '';
       iconRight = '';
@@ -17432,13 +17433,16 @@ var BFHTimezonesList = {
       
       modeAddon = '';
       modeMax = '23';
+      modeMin = '0';
       if (this.options.mode === '12h') {
+
         modeAddon = '<td>' +
           '<div class="bfh-selectbox" data-input="' + this.options.input + '" data-value="am">' +
           '<div data-value="am">' + BFHTimePickerModes.am + '</div>' +
           '<div data-value="pm">' + BFHTimePickerModes.pm + '</div>' +
           '</div>';
-        modeMax = '11';
+        modeMax = '12';
+        modeMin = '1';
       }
 
       this.$element.html(
@@ -17452,7 +17456,7 @@ var BFHTimezonesList = {
         '<tbody>' +
         '<tr>' +
         '<td class="hour">' +
-        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
+        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="' + modeMin + '" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
         '</td>' +
         '<td class="separator">' + BFHTimePickerDelimiter + '</td>' +
         '<td class="minute">' +

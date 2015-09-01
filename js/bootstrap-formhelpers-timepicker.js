@@ -142,7 +142,7 @@
         '<tbody>' +
         '<tr>' +
         '<td class="hour">' +
-        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
+        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="' + modeMin + '" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
         '</td>' +
         '<td class="separator">' + BFHTimePickerDelimiter + '</td>' +
         '<td class="minute">' +
