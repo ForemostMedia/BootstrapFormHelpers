@@ -102,7 +102,8 @@
           iconRight,
           iconAddon,
           modeAddon,
-          modeMax;
+          modeMax,
+          modeMin;
 
       iconLeft = '';
       iconRight = '';
@@ -118,13 +119,16 @@
       
       modeAddon = '';
       modeMax = '23';
+      modeMin = '0';
       if (this.options.mode === '12h') {
+
         modeAddon = '<td>' +
           '<div class="bfh-selectbox" data-input="' + this.options.input + '" data-value="am">' +
           '<div data-value="am">' + BFHTimePickerModes.am + '</div>' +
           '<div data-value="pm">' + BFHTimePickerModes.pm + '</div>' +
           '</div>';
-        modeMax = '11';
+        modeMax = '12';
+        modeMin = '1';
       }
 
       this.$element.html(
